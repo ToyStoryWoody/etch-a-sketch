@@ -62,7 +62,8 @@ clearButton.addEventListener('click', function(e) {
     const gridDivs = document.querySelectorAll('.grid-div');
 
     gridDivs.forEach(div => {
-        div.style.backgroundColor = 'white';
+        div.style.opacity = 0;
+        div.style.backgroundColor = 'black';
     });
 });
 
@@ -82,12 +83,18 @@ redrawButton.addEventListener('click', function() {
 
 basicButton.addEventListener('click', function() {
     brushMode = 'basic';
+    const currentBrushDiv = document.querySelector('#current-brush');
+    currentBrushDiv.textContent = 'Current Brush: Basic';
 });
 
 colorButton.addEventListener('click', function() {
     brushMode = 'color';
+    const currentBrushDiv = document.querySelector('#current-brush');
+    currentBrushDiv.textContent = 'Current Brush: Random Color';
 });
 
 greyscaleButton.addEventListener('click', function() {
     brushMode = 'greyscale';
+    const currentBrushDiv = document.querySelector('#current-brush');
+    currentBrushDiv.textContent = 'Current Brush: Greyscale';
 });
